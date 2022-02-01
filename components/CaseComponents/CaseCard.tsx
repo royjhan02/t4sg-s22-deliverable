@@ -16,11 +16,17 @@ type CaseCardProps = {
   data: CaseData;
 };
 
+export type TagData = {
+  name: string;
+  id?: number;
+};
+
 export type CaseData = {
   name: string;
   status: string;
   description: string;
   id: number;
+  cases_tags?: [TagData];
 };
 
 const CaseCard: React.FC<CaseCardProps> = (props) => {
@@ -44,6 +50,13 @@ const CaseCard: React.FC<CaseCardProps> = (props) => {
             {caseData.status}
           </CardSubtitle>
           <CardText>{caseData.description}</CardText>
+          {/*
+            ALTERNATE FEATURE 1 TODO:
+            Use the data on tags found in props to render out all
+            of the tags associated with every case.
+          */}
+
+          {/* END TODO */}
         </Card>
       </div>
     </Container>

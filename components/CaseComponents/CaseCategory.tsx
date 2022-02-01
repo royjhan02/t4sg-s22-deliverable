@@ -12,6 +12,11 @@ type CaseCategoryData = {
   cases: CaseData[];
 };
 
+/*
+  ALTERNATE FEATURE 1 TODO:
+  Use the data on tags found in props to render out all
+  of the tags associated with every case.
+*/
 const CategoryQuery = `
   query CategoryQuery($category_id: bigint = "") {
     category(where: {id: {_eq: $category_id}}, limit: 1) {
@@ -25,6 +30,7 @@ const CategoryQuery = `
     }
 }
 `;
+/* END TODO */
 
 const CaseCategory = (props: CaseCategoryProps) => {
   const category_id = props.category_id;
