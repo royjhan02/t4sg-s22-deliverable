@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useMemo, useState } from "react";
+import React, { ReactNode, useMemo } from "react";
 import { Client, createClient, Provider } from "urql";
 
 let urqlClient: Client;
@@ -10,12 +10,11 @@ export function UrqlContainer({ children }: UrqlContainerProps) {
   const token = null;
   urqlClient = useMemo(() => {
     return createClient({
-      url: "https://t4sg-f21-1.hasura.app/v1/graphql",
+      url: "https://t4sg-s22-deliverable.herokuapp.com/v1/graphql",
       fetchOptions: () => {
         return {
           headers: {
-            "x-hasura-admin-secret":
-              "SRRv0UblVjkG425DWaRuQqrfDPNMEMzuyZnHqvRaxtWkD5J7c8o5q4F0I3Qw3Uuy",
+            "x-hasura-admin-secret": "t4sgdabest",
             Authorization: token ? `Bearer ${token}` : "",
           },
         };
