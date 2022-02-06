@@ -37,13 +37,13 @@ type AddCaseModalProps = {
 };
 
 const InsertCategoryMutation = `
-mutation AddCategoryMutation($description: String = "", $name: String = "") {
-    insert_category_one(object: {description: $description, name: $name}) {
-      id
-      name
-      description
-    }
-  }  
+  mutation AddCategoryMutation($description: String = "", $name: String = "") {
+      insert_category_one(object: {description: $description, name: $name}) {
+        id
+        name
+        description
+      }
+    }  
 `;
 
 const AddCategoryModal: React.FC<AddCaseModalProps> = (props) => {
